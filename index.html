@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Space+Grotesk:wght@300..700&display=swap"
+    rel="stylesheet">
+
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="card-front">
+      <div class="logo">
+        <div class="first-circle"></div>
+        <div class="second-circle"></div>
+      </div> 
+
+      <div class="card-info-number" id="card-info-number">
+        0000 0000 0000 0000
+      </div>
+
+      <div class="card-info">
+        <div class="card-info-name" id="card-info-name">JANE APPLESEED</div>
+        <div class="card-info-date" style="display: flex;">
+          <div class="card-info-month" id="card-info-month">00</div>
+          /
+          <div class="card-info-year" id="card-info-year">00</div>
+          </div>
+      </div>
+  </div>
+
+  <div class="card-back">
+    <div class="card-info-cvc" id="card-info-cvc">000</div>
+  </div>
+
+  <div class="form" id="form">
+    <form action="/">
+      <label for="fname">CARDHOLDER NAME</label><br>
+      <input type="text" style="margin-bottom: 20px;" id="name" name="fname" placeholder="e.g. Jane Appleseed"><br>
+      <p class="error" style="margin-top: -10px;" id="name-error">Can't be blank</p>
+      <label for="cardnumber" >CARD NUMBER</label><br>
+      <input type="text" id="cardnumber" name="cardnumber" maxlength="16" placeholder="e.g. 1234 5678 9123 0000"><br>
+      <p class="error" id="cardnumber-error">Wrong format, numbers only</p>
+      <p class="error" id="cardnumber-empty-error">Can't be blank</p>
+      
+      <div class="dateinputcontainer">
+        <label for="month">EXP. DATE (MM/YY)</label>
+        <label for="cvc">CVC</label>
+
+        <div>
+          <input type="number" id="month" name="month" placeholder="MM" min="1" max="12">
+          
+          <input type="number" id="year" name="year" placeholder="YY" min="00" max="99">
+          
+        </div>
+
+        <input type="number" id="cvc" name="cvc" placeholder="e.g. 123">
+
+        <div style="display: flex; gap: 5px;">
+          <p class="error month-error" id="month-error">Can't be blank</p>
+          <p class="error year-error" id="year-error">Can't be blank</p>
+        </div>
+        
+        <p class="error cvc-error" id="cvc-error">Can't be blank</p>
+      </div>
+
+
+    </form>
+    <div class="confirm">
+      <button id="confirmbutton">Confirm</button>
+    </div>
+  </div>
+
+  <div class="confirmed" id="confirmed" style="display: none;">
+    <img src="./images/icon-complete.svg" alt="complete">
+    <div class="thank-you">THANK YOU!</div>
+    <p>We've added your card details</p>
+    <div class="continue">
+      <button id="reset">Continue</button>
+    </div>
+  </div>
+  
+  
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Ankit</a>.
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
